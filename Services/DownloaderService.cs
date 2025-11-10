@@ -5,6 +5,7 @@ namespace MusicDownloaderAPI.Services
     public class DownloaderService
     {
         private readonly string _downloadPath;
+        const string YTDLP_PATH = "/usr/local/bin/yt-dlp";
 
         public DownloaderService()
         {
@@ -24,7 +25,7 @@ namespace MusicDownloaderAPI.Services
                 {
                     StartInfo = new ProcessStartInfo
                     {
-                        FileName = "yt-dlp.exe",
+                        FileName = YTDLP_PATH ,
                         Arguments = $"-f bestaudio --extract-audio --audio-format mp3 -o \"{outputTemplate}\" \"{url}\"",
                         RedirectStandardOutput = true,
                         RedirectStandardError = true,
