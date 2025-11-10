@@ -26,7 +26,7 @@ namespace MusicDownloaderAPI.Services
                     StartInfo = new ProcessStartInfo
                     {
                         FileName = YTDLP_PATH ,
-                        Arguments = $"-f bestaudio --extract-audio --audio-format mp3 -o \"{outputTemplate}\" \"{url}\"",
+                        Arguments = $"--user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' --referer https://www.youtube.com/ -f bestaudio --extract-audio --audio-format mp3 -o \"{outputTemplate}\" \"{url}\"",
                         RedirectStandardOutput = true,
                         RedirectStandardError = true,
                         UseShellExecute = false,
